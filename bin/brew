@@ -114,6 +114,8 @@ export_homebrew_env_file() {
 }
 
 export_homebrew_env_file "${HOMEBREW_LIBRARY}/brew.env"
+HOMEBREW_USER_CONFIG_HOME="${HOMEBREW_LIBRARY}/User_Config_Home"
+
 
 
 # Copy and export all HOMEBREW_* variables previously mentioned in
