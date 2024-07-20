@@ -18,16 +18,7 @@ then
   echo "Error: \$PWD must be set to run brew." >&2
   exit 1
 fi
-if ! [[ -d "${PWD}" ]]
-then
-  echo "Error: The current working directory must exist to run brew." >&2
-  exit 1
-fi
-if ! [[ -r "${PWD}" ]]
-then
-  echo "Error: The current working directory must be readable to ${USER} to run brew." >&2
-  exit 1
-fi
+
 
 # Fail fast with concise message when HOME is unset
 if [[ -z "${HOME:-}" ]]
@@ -99,6 +90,8 @@ then
   fi
   unset USR_LOCAL_BREW_FILE_DIRECTORY USR_LOCAL_HOMEBREW_REPOSITORY
 fi
+########## hard to understand. We will keep it first. ###################
+
 
 unset BREW_FILE_DIRECTORY
 
@@ -120,33 +113,8 @@ export_homebrew_env_file() {
   done <"${env_file}"
 }
 
-# First, load the system-wide configuration.
-unset SYSTEM_ENV_TAKES_PRIORITY
-if [[ -n "${HOMEBREW_SYSTEM_ENV_TAKES_PRIORITY-}" ]]
-then
-  SYSTEM_ENV_TAKES_PRIORITY="1"
-else
-  export_homebrew_env_file "/etc/homebrew/brew.env"
-fi
+export_homebrew_env_file "${HOMEBREW_LIBRARY}/brew.env"
 
-# Next, load the prefix configuration
-export_homebrew_env_file "${HOMEBREW_PREFIX}/etc/homebrew/brew.env"
-
-# Finally, load the user configuration
-if [[ -n "${XDG_CONFIG_HOME-}" ]]
-then
-  HOMEBREW_USER_CONFIG_HOME="${XDG_CONFIG_HOME}/homebrew"
-else
-  HOMEBREW_USER_CONFIG_HOME="${HOME}/.homebrew"
-fi
-
-export_homebrew_env_file "${HOMEBREW_USER_CONFIG_HOME}/brew.env"
-
-# If the system configuration takes priority, load it last.
-if [[ -n "${SYSTEM_ENV_TAKES_PRIORITY-}" ]]
-then
-  export_homebrew_env_file "/etc/homebrew/brew.env"
-fi
 
 # Copy and export all HOMEBREW_* variables previously mentioned in
 # manpage or used elsewhere by Homebrew.
