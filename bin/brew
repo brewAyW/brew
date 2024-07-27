@@ -109,12 +109,7 @@ fi
 
 if [ -r "${HOMEBREW_LIBRARY}/env_order" -a -f "${HOMEBREW_LIBRARY}/env_order" ]
 then
-  while read line
-  do
-    # only load HOMEBREW_ENV_ORDER_* lines
-    [[ "${line}" = "HOMEBREW_ENV_ORDER_FIRST"* ]] || [[ "${line}" = "HOMEBREW_ENV_ORDER_SECOND"* ]] || [[ "${line}" = "HOMEBREW_ENV_ORDER_LAST"* ]] || continue
-    eval "${line?}"
-  done < "${HOMEBREW_LIBRARY}/env_order"
+  eval $(cat "${HOMEBREW_LIBRARY}/env_order")
   load_that_env_file() {
       local env_file
       env_file="$1"
