@@ -129,9 +129,11 @@ then
             export_homebrew_env_file "${HOMEBREW_LIBRARY}/brew.env"
       esac
   }
-  load_that_env_file HOMEBREW_ENV_ORDER_FIRST
-  load_that_env_file HOMEBREW_ENV_ORDER_SECOND
-  load_that_env_file HOMEBREW_ENV_ORDER_THIRD
+  set +u
+  load_that_env_file $HOMEBREW_ENV_ORDER_FIRST
+  load_that_env_file $HOMEBREW_ENV_ORDER_SECOND
+  load_that_env_file $HOMEBREW_ENV_ORDER_THIRD
+  set -u
   unset HOMEBREW_ENV_ORDER_FIRST
   unset HOMEBREW_ENV_ORDER_SECOND
   unset HOMEBREW_ENV_ORDER_THIRD
