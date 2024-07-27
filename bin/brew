@@ -100,8 +100,45 @@ export_homebrew_env_file() {
   done <"${env_file}"
 }
 
-export_homebrew_env_file "${HOMEBREW_LIBRARY}/brew.env"
-HOMEBREW_USER_CONFIG_HOME="${HOMEBREW_LIBRARY}/User_Config_Home"
+if [[ -n "${XDG_CONFIG_HOME-}" ]]
+then
+  HOMEBREW_USER_CONFIG_HOME="${XDG_CONFIG_HOME}/homebrew"
+else
+  HOMEBREW_USER_CONFIG_HOME="${HOME}/.homebrew"
+fi
+
+if [ -r "${HOMEBREW_LIBRARY}/env_order" -a -f "${HOMEBREW_LIBRARY}/env_order" ]
+then
+  while read line
+  do
+    # only load HOMEBREW_ENV_ORDER_* lines
+    [[ "${line}" = "HOMEBREW_ENV_ORDER_FIRST"* ]] || [[ "${line}" = "HOMEBREW_ENV_ORDER_SECOND"* ]] || [[ "${line}" = "HOMEBREW_ENV_ORDER_LAST"* ]] || continue
+    eval "${line?}"
+  done < "${HOMEBREW_LIBRARY}/env_order"
+  load_that_env_file() {
+      local env_file
+      env_file="$1"
+      case $1 in
+        'USER')
+            export_homebrew_env_file "${HOMEBREW_USER_CONFIG_HOME}/brew.env"
+        ;;
+        'SYSTEM')
+            export_homebrew_env_file "/etc/homebrew/brew.env"
+        ;;
+        'LOCAL')
+            export_homebrew_env_file "${HOMEBREW_LIBRARY}/brew.env"
+      esac
+  }
+  load_that_env_file HOMEBREW_ENV_ORDER_FIRST
+  load_that_env_file HOMEBREW_ENV_ORDER_SECOND
+  load_that_env_file HOMEBREW_ENV_ORDER_THIRD
+  unset HOMEBREW_ENV_ORDER_FIRST
+  unset HOMEBREW_ENV_ORDER_SECOND
+  unset HOMEBREW_ENV_ORDER_THIRD
+  unset load_that_env_file
+else
+    export_homebrew_env_file "${HOMEBREW_LIBRARY}/brew.env"
+fi
 
 
 
