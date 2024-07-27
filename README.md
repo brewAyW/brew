@@ -6,10 +6,6 @@ THIS IS NOT THE OFFICAL HOMEBREW! Too se the offical Homebrew, see this: https:/
 
 Features and usage are [summarised on the homepage](https://brew.sh). Terminology (e.g. the difference between a Cellar, Tap, Cask and so forth) is [explained here](https://docs.brew.sh/Formula-Cookbook#homebrew-terminology).
 
-## brewAnywhere's new features
-We've done most things on changing the codes.
-But some are affected on brew's configuration file. We are writing about this and it will come soon
-
 ## What Packages Are Available?
 
 1. Type `brew formulae` for a list.
