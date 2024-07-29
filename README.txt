@@ -1,1 +1,1 @@
-IMPORTANT! THIS PROJECT IS CURRENTLY MEETING A FETAL PROBLEM AND DO NOT USE IT!
+Because our upstream, Homebrew/brew, is currently meeting a bug that stops you from updating. We will pause our project untill the bug is fixed in the upstream.
