@@ -1,6 +1,4 @@
-THIS IS NOT THE OFFICAL HOMEBREW! Too se the offical Homebrew, see this: https://github.com/homebrew/brew \
-
-
+THIS IS NOT THE OFFICAL HOMEBREW! Too se the offical Homebrew, see this: https://github.com/homebrew/brew 
 
 # Homebrew
 
