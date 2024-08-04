@@ -1,4 +1,5 @@
-THIS IS NOT THE OFFICAL HOMEBREW! Too se the offical Homebrew, see this: https://github.com/homebrew/brew 
+THIS IS NOT THE OFFICAL HOMEBREW! Too se the offical Homebrew, see this: https://github.com/homebrew/brew \
+You may notice that Homebrew gives an error when updating. But don't worry, your Homebrew is already updated when the error come. The error appears when generating update report. See [Homebrew discussion 5535](https://github.com/orgs/Homebrew/discussions/5535) to know more details.
 
 # Homebrew
 
