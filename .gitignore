@@ -22,7 +22,10 @@
 /Library/PinnedTaps
 /Library/Homebrew/.byebug_history
 /Library/Homebrew/test/.rdbg_history
-
+/Library/Caches
+/Library/Config.d
+/Library/Logs
+/Library/brew.env
 # Ignore Bundler files
 **/.bundle/bin
 **/.bundle/cache

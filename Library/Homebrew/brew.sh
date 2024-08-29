@@ -49,15 +49,12 @@ else
   HOMEBREW_DEFAULT_REPOSITORY="${HOMEBREW_GENERIC_DEFAULT_REPOSITORY}"
 fi
 
+HOMEBREW_DEFAULT_CACHE="${HOMEBREW_LIBRARY}/Caches"
+HOMEBREW_DEFAULT_LOGS="${HOMEBREW_LIBRART}/Logs"
 if [[ -n "${HOMEBREW_MACOS}" ]]
 then
-  HOMEBREW_DEFAULT_CACHE="${HOME}/Library/Caches/Homebrew"
-  HOMEBREW_DEFAULT_LOGS="${HOME}/Library/Logs/Homebrew"
   HOMEBREW_DEFAULT_TEMP="/private/tmp"
 else
-  CACHE_HOME="${HOMEBREW_XDG_CACHE_HOME:-${HOME}/.cache}"
-  HOMEBREW_DEFAULT_CACHE="${CACHE_HOME}/Homebrew"
-  HOMEBREW_DEFAULT_LOGS="${CACHE_HOME}/Homebrew/Logs"
   HOMEBREW_DEFAULT_TEMP="/tmp"
 fi
 
@@ -85,14 +82,14 @@ fi
 # for bottles) unless there's already a Cellar in HOMEBREW_REPOSITORY.
 # These variables are set by bin/brew
 # shellcheck disable=SC2154
-if [[ -d "${HOMEBREW_REPOSITORY}/Cellar" ]]
+if [[ -d "${HOMEBREW_PREFIX}/Cellar" ]]
 then
-  HOMEBREW_CELLAR="${HOMEBREW_REPOSITORY}/Cellar"
-else
   HOMEBREW_CELLAR="${HOMEBREW_PREFIX}/Cellar"
+else
+  HOMEBREW_CELLAR="${HOMEBREW_REPOSITORY}/Cellar"
 fi
 
-HOMEBREW_CASKROOM="${HOMEBREW_PREFIX}/Caskroom"
+HOMEBREW_CASKROOM="${HOMEBREW_REPOSITORY}/Caskroom"
 
 HOMEBREW_CACHE="${HOMEBREW_CACHE:-${HOMEBREW_DEFAULT_CACHE}}"
 HOMEBREW_LOGS="${HOMEBREW_LOGS:-${HOMEBREW_DEFAULT_LOGS}}"
@@ -367,17 +364,6 @@ if [[ "${HOMEBREW_PREFIX}" == "/" || "${HOMEBREW_PREFIX}" == "/usr" ]]
 then
   # it may work, but I only see pain this route and don't want to support it
   odie "Cowardly refusing to continue at this prefix: ${HOMEBREW_PREFIX}"
-fi
-
-# Many Pathname operations use getwd when they shouldn't, and then throw
-# odd exceptions. Reduce our support burden by showing a user-friendly error.
-if ! [[ -d "${PWD}" ]]
-then
-  odie "The current working directory must exist to run brew."
-fi
-if ! [[ -r "${PWD}" ]]
-then
-  odie "The current working directory must be readable to ${USER} to run brew."
 fi
 
 #####
@@ -898,7 +884,7 @@ then
   export HOMEBREW_RUBY_WARNINGS="-W1"
 fi
 
-export HOMEBREW_BREW_DEFAULT_GIT_REMOTE="https://github.com/Homebrew/brew"
+export HOMEBREW_BREW_DEFAULT_GIT_REMOTE="https://github.com/brewayw/brew"
 if [[ -z "${HOMEBREW_BREW_GIT_REMOTE}" ]]
 then
   HOMEBREW_BREW_GIT_REMOTE="${HOMEBREW_BREW_DEFAULT_GIT_REMOTE}"
