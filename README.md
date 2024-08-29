@@ -1,6 +1,7 @@
 # brewAnywhere
 
-This is not the offical Homebrew! OFFICAL:https://github.com/homebrew 
+This is not the offical Homebrew! OFFICAL:https://github.com/homebrew \
+Even though Homebrew says it would be buggy to build from source, but never be afraid, in most times, it won't fail!
 
 ## Installtion
 
