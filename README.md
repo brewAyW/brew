@@ -1,6 +1,6 @@
 # brewAnywhere
 
-This is not the offical Homebrew! OFFICAL:https://github.com/homebrew \
+This is not the offical Homebrew! OFFICAL:https://github.com/homebrew 
 
 ## Installtion
 
