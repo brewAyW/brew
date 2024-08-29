@@ -1,8 +1,22 @@
+# brewAnywhere
+
+This is not the offical Homebrew! OFFICAL:https://github.com/homebrew \
+
+## Installtion
+
+run `git clone https://github.com/brewayw/brew [Installtion place]`
+
+
+
+
+
+
+
 # Homebrew
 
 [![GitHub release](https://img.shields.io/github/release/Homebrew/brew.svg)](https://github.com/Homebrew/brew/releases)
 
-Features, usage and installation instructions are [summarised on the homepage](https://brew.sh). Terminology (e.g. the difference between a Cellar, Tap, Cask and so forth) is [explained here](https://docs.brew.sh/Formula-Cookbook#homebrew-terminology).
+Features, usage and instructions are [summarised on the homepage](https://brew.sh). Terminology (e.g. the difference between a Cellar, Tap, Cask and so forth) is [explained here](https://docs.brew.sh/Formula-Cookbook#homebrew-terminology).
 
 ## What Packages Are Available?
 
