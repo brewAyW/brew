@@ -1,6 +1,7 @@
 # brewAnywhere
 
 This is not the offical Homebrew! OFFICAL:https://github.com/homebrew \
+brew, with a different idea.
 
 ## Few things to notice
 
