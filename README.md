@@ -16,6 +16,8 @@ For the All In On Folder idea, we moved Caches and Logs directory to `${HOMEBREW
 
 We had discovered a way to do this, though we're still not sure if it's a stable way. If you found any problem, report is here: https://github.com/brewAyW/brew/issues/4 
 
+This would help a lot when you're having different brews around your system but don't want to build one same package again and again.
+
 ```
 # First, found your outside package and the formula and version that match your package
 mkdir [Homebrew Repository]/Cellar/[matched formula name]
