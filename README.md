@@ -1,17 +1,25 @@
 # brewAnywhere
 
-This is not the offical Homebrew! OFFICAL:https://github.com/homebrew \
-Even though Homebrew says it would be buggy to build from source, but never be afraid, in most times, it won't fail!
+This is not the offical Homebrew! OFFICAL:https://github.com/homebrew 
+
+`brew, with a different idea.`
+
+## Few things to notice
+
+Even though Homebrew says it would be buggy to build from source, but never be afraid, in most times, it won't fail! 
+
+The Homebrew ENV file is on `${HOMEBREW_REPOSITORY}/Library/brew.env`, remember to leave a empty line in the end, because the last line won't be read. 
+
+For the All In On Folder idea, we moved Caches and Logs directory to `${HOMEBREW_REPOSITORY}/Library` and moved "HOMEBREW_USER_CONFIG_HOME" to `${HOMEBREW_REPOSITORY}/Library/Config.d`
 
 ## Installtion
 
-run `git clone https://github.com/brewayw/brew [Installtion place]`
-
-
-
-
-
-
+```
+git clone https://github.com/brewayw/brew [Homebrew Repository (Packages's Home)]
+mkdir [Homebrew Prefix (like an interface)]
+mkdir [Homebrew Prefix]/bin
+ln -s [Homebrew Repository]/bin/brew [Homebrew Prefix]/bin/brew
+```
 
 # Homebrew
 
