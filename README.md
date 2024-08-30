@@ -19,11 +19,13 @@ We had discovered a way to do this, though we're still not sure if it's a stable
 This would help a lot when you're having different brews around your system but don't want to build one same package again and again.
 
 ```
-# First, found your outside package and the formula and version that match your package
+# First, the formula and version that match your outside package
 mkdir [Homebrew Repository]/Cellar/[matched formula name]
-ln -s Homebrew Repository]/Cellar/[matched formula name]/[matched version] [your package's prefix]
+ln -s Homebrew Repository]/Cellar/[matched formula name]/[matched version] [outside package's prefix]
 # Finished!
 ```
+
+Suggestions: openssl is well needed and takes a long time to build. So try to link it!
 
 ## Installtion
 
