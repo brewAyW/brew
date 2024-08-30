@@ -12,6 +12,17 @@ The Homebrew ENV file is on `${HOMEBREW_REPOSITORY}/Library/brew.env`, remember 
 
 For the All In On Folder idea, we moved Caches and Logs directory to `${HOMEBREW_REPOSITORY}/Library` and moved "HOMEBREW_USER_CONFIG_HOME" to `${HOMEBREW_REPOSITORY}/Library/Config.d`
 
+## A way to use packages outside current Homebrew
+
+We had discovered a way to do this, though we're still not sure if it's a stable way. If you found any problem, report is here: https://github.com/brewAyW/brew/issues/4 
+
+```
+# First, found your outside package and the formula and version that match your package
+mkdir [Homebrew Repository]/Cellar/[matched formula name]
+ln -s Homebrew Repository]/Cellar/[matched formula name]/[matched version] [your package's prefix]
+# Finished!
+```
+
 ## Installtion
 
 ```
