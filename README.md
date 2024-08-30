@@ -21,8 +21,6 @@ mkdir [Homebrew Prefix]/bin
 ln -s [Homebrew Repository]/bin/brew [Homebrew Prefix]/bin/brew
 ```
 
-
-
 # Homebrew
 
 [![GitHub release](https://img.shields.io/github/release/Homebrew/brew.svg)](https://github.com/Homebrew/brew/releases)
