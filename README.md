@@ -2,8 +2,6 @@
 
 This is not the offical Homebrew! OFFICAL:https://github.com/homebrew 
 
-`brew, with a different idea.`
-
 We're having a idea that a package manager should be portable. If you hava this idea too, try this!
 
 ## Few things to notice
