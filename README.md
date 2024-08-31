@@ -25,6 +25,8 @@ ln -s Homebrew Repository]/Cellar/[matched formula name]/[matched version] [outs
 # Finished!
 ```
 
+Notice that you should first check if the outside package is the same to the Homebrew package (for example, Homebrew node.js and website downloaded node.js is different).
+
 Suggestions: openssl is well needed and takes a long time to build. So try to link it!
 
 ## Installtion
