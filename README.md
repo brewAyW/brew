@@ -12,6 +12,15 @@ The Homebrew ENV file is on `${HOMEBREW_REPOSITORY}/Library/brew.env`, remember 
 
 For the All In On Folder idea, we moved Caches and Logs directory to `${HOMEBREW_REPOSITORY}/Library` and moved "HOMEBREW_USER_CONFIG_HOME" to `${HOMEBREW_REPOSITORY}/Library/Config.d`
 
+## Installtion
+
+```
+git clone https://github.com/brewayw/brew [Homebrew Repository (Packages's Home)]
+mkdir [Homebrew Prefix (like an interface)]
+mkdir [Homebrew Prefix]/bin
+ln -s [Homebrew Repository]/bin/brew [Homebrew Prefix]/bin/brew
+```
+
 ## A way to use packages outside current Homebrew
 
 We had discovered a way to do this, though we're still not sure if it's a stable way. If you found any problem, report is here: https://github.com/brewAyW/brew/issues/4 
@@ -28,15 +37,6 @@ ln -s Homebrew Repository]/Cellar/[matched formula name]/[matched version] [outs
 Notice that you should first check if the outside package is the same to the Homebrew package (for example, Homebrew node.js and website downloaded node.js is different).
 
 Suggestions: openssl is well needed and takes a long time to build. So try to link it!
-
-## Installtion
-
-```
-git clone https://github.com/brewayw/brew [Homebrew Repository (Packages's Home)]
-mkdir [Homebrew Prefix (like an interface)]
-mkdir [Homebrew Prefix]/bin
-ln -s [Homebrew Repository]/bin/brew [Homebrew Prefix]/bin/brew
-```
 
 # Homebrew
 
