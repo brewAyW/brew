@@ -13,8 +13,14 @@ homebrew-list() {
   local formula=""
   local cask=""
 
+  local first_arg
   for arg in "$@"
   do
+    if [[ -z "${first_arg}" ]]
+    then
+      first_arg=1
+      [[ "${arg}" == "list" ]] && continue
+    fi
     case "${arg}" in
       # check for flags passed to ls
       -1 | -l | -r | -t) ls_args+=("${arg}") ;;
@@ -29,9 +35,9 @@ homebrew-list() {
   if [[ -t 1 ]]
   then
     tty=1
+    source "${HOMEBREW_LIBRARY}/Homebrew/utils/helpers.sh"
   fi
 
-  local error_string="LS_ERRORED"
   if [[ -z "${cask}" && -d "${HOMEBREW_CELLAR}" ]]
   then
     if [[ -n "${tty}" && -z "${formula}" ]]
@@ -40,11 +46,8 @@ homebrew-list() {
     fi
 
     local formula_output
-    formula_output="$(ls "${ls_args[@]}" "${HOMEBREW_CELLAR}" || echo "${error_string}")"
-    if [[ "${formula_output}" == "${error_string}" ]]
-    then
-      exit 1
-    elif [[ -n "${formula_output}" ]]
+    formula_output="$(ls "${ls_args[@]}" "${HOMEBREW_CELLAR}")" || exit 1
+    if [[ -n "${formula_output}" ]]
     then
       echo "${formula_output}"
     fi
@@ -63,11 +66,8 @@ homebrew-list() {
     fi
 
     local cask_output
-    cask_output="$(ls "${ls_args[@]}" "${HOMEBREW_CASKROOM}" || echo "${error_string}")"
-    if [[ "${cask_output}" == "${error_string}" ]]
-    then
-      exit 1
-    elif [[ -n "${cask_output}" ]]
+    cask_output="$(ls "${ls_args[@]}" "${HOMEBREW_CASKROOM}")" || exit 1
+    if [[ -n "${cask_output}" ]]
     then
       echo "${cask_output}"
     fi
