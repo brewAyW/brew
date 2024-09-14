@@ -121,6 +121,8 @@ export_homebrew_env_file() {
 HOMEBREW_USER_CONFIG_HOME="${HOMEBREW_LIBRARY}/Configs.d"
 export_homebrew_env_file "${HOMEBREW_LIBRARY}/brew.env"
 
+
+
 # Copy and export all HOMEBREW_* variables previously mentioned in
 # manpage or used elsewhere by Homebrew.
 
@@ -246,4 +248,11 @@ fi
 
 unset VAR ENV_VAR_NAMES
 
-exec /usr/bin/env -i "${FILTERED_ENV[@]}" /bin/bash -p "${HOMEBREW_LIBRARY}/Homebrew/brew.sh" "$@"
+if [ -n HOMEBREW_USER ]
+then
+    echo "Switching to uesr \'$HOMEBREW_USER\' as a request from ENV HOMEBREW_USER."
+    echo "Please enter the password for the user"
+    su $HOMEBREW_USER -c "exec /usr/bin/env -i "${FILTERED_ENV[@]}" /bin/bash -p "${HOMEBREW_LIBRARY}/Homebrew/brew.sh" "$@""
+else
+    exec /usr/bin/env -i "${FILTERED_ENV[@]}" /bin/bash -p "${HOMEBREW_LIBRARY}/Homebrew/brew.sh" "$@"
+fi  
