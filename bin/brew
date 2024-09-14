@@ -251,9 +251,9 @@ set +u
 if [ $HOMEBREW_USER ]
 then
     set -u
-    echo "Switching to uesr \'$HOMEBREW_USER\' as a request from ENV HOMEBREW_USER."
+    echo "Switching to uesr '$HOMEBREW_USER' as a request from ENV HOMEBREW_USER."
     echo "Please enter the password for the user"
-    su $HOMEBREW_USER -c "exec /usr/bin/env -i "${FILTERED_ENV[@]}" /bin/bash -p "${HOMEBREW_LIBRARY}/Homebrew/brew.sh" "$@""
+    su $HOMEBREW_USER -m -c 'exec /usr/bin/env -i "${FILTERED_ENV[@]}" /bin/bash -p "${HOMEBREW_LIBRARY}/Homebrew/brew.sh" "$@"'
 else
     set -u
     exec /usr/bin/env -i "${FILTERED_ENV[@]}" /bin/bash -p "${HOMEBREW_LIBRARY}/Homebrew/brew.sh" "$@"
