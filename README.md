@@ -40,7 +40,8 @@ Suggestions: openssl is well needed and takes a long time to build. So try to li
 
 ## Developing Plans
 
-Trying to support multi-users
+Trying to support multi-users.
+
 If you want to help, say in https://github.com/brewAyW/brew/issues/5.
 
 # Homebrew
