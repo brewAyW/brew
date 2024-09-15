@@ -38,6 +38,11 @@ Notice that you should first check if the outside package is the same to the Hom
 
 Suggestions: openssl is well needed and takes a long time to build. So try to link it!
 
+## Developing Plans
+
+Trying to support multi-users
+If you want to help, say in https://github.com/brewAyW/brew/issues/5.
+
 # Homebrew
 
 For more information, see the offical Homebrew README, https://github.com/homebrew/brew
