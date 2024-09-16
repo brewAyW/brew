@@ -10,7 +10,7 @@ module Cask
   module Caskroom
     sig { returns(Pathname) }
     def self.path
-      @path ||= HOMEBREW_PREFIX/"Caskroom"
+      @path ||= HOMEBREW_CASKROOM
     end
 
     # Return all paths for installed casks.
