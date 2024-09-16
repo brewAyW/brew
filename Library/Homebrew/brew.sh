@@ -96,7 +96,7 @@ else
   HOMEBREW_CELLAR="${HOMEBREW_REPOSITORY}/Cellar"
 fi
 
-HOMEBREW_CASKROOM="${HOMEBREW_PREFIX}/Caskroom"
+#HOMEBREW_CASKROOM="${HOMEBREW_PREFIX}/Caskroom"
 
 HOMEBREW_CACHE="${HOMEBREW_CACHE:-${HOMEBREW_DEFAULT_CACHE}}"
 HOMEBREW_LOGS="${HOMEBREW_LOGS:-${HOMEBREW_DEFAULT_LOGS}}"
@@ -144,10 +144,6 @@ case "$@" in
     ;;
   --repository | --repo)
     echo "${HOMEBREW_REPOSITORY}"
-    exit 0
-    ;;
-  --caskroom)
-    echo "${HOMEBREW_CASKROOM}"
     exit 0
     ;;
   --cache)
