@@ -8,6 +8,8 @@ We're having a idea that a package manager should be portable and multi-user wel
 
 Even though Homebrew says it would be buggy to build from source, but never be afraid, in most times, it won't fail! 
 
+Sometimes Homebrew would suggest you to run a command, please look at the command carefully and DONT DO THAT IF IT'S FOR CHANGING PERMISSION! Just use ways you like to make that directory writable to you.
+
 The Homebrew ENV file is on `${HOMEBREW_REPOSITORY}/Library/brew.env`, remember to leave a empty line in the end, because the last line won't be read. 
 
 For the All In On Folder idea, we moved Caches and Logs directory to `${HOMEBREW_REPOSITORY}/Library` and moved "HOMEBREW_USER_CONFIG_HOME" to `${HOMEBREW_REPOSITORY}/Library/Config.d`
