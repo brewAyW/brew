@@ -89,12 +89,8 @@ fi
 # for bottles) unless there's already a Cellar in HOMEBREW_REPOSITORY.
 # These variables are set by bin/brew
 # shellcheck disable=SC2154
-if [[ -d "${HOMEBREW_PREFIX}/Cellar" ]]
-then
-  HOMEBREW_CELLAR="${HOMEBREW_PREFIX}/Cellar"
-else
-  HOMEBREW_CELLAR="${HOMEBREW_REPOSITORY}/Cellar"
-fi
+
+HOMEBREW_CELLAR="${HOMEBREW_PREFIX}/Cellar"
 
 HOMEBREW_CASKROOM="${HOMEBREW_PREFIX}/Caskroom"
 
