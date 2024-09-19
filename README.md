@@ -17,7 +17,7 @@ For the All In On Folder idea, we moved Caches and Logs directory to `${HOMEBREW
 ## Installtion
 
 ```
-git clone https://github.com/brewayw/brew [Homebrew Repository (Packages's Home)] --depth=1
+git clone -b master https://github.com/brewayw/brew [Homebrew Repository (Packages's Home)] --depth=1
 mkdir [Homebrew Prefix (Packages' Interface)]
 mkdir [Homebrew Prefix]/bin
 ln -s [Homebrew Repository]/bin/brew [Homebrew Prefix]/bin/brew
