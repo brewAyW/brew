@@ -312,6 +312,9 @@ Which type of analytics data to retrieve\. The value for \fIcategory\fP must be 
 \fB\-\-github\fP
 Open the GitHub source page for \fIformula\fP and \fIcask\fP in a browser\. To view the history locally: \fBbrew log \-p\fP \fIformula\fP or \fIcask\fP
 .TP
+\fB\-\-fetch\-manifest\fP
+Fetch GitHub Packages manifest for extra information when \fIformula\fP is not installed\.
+.TP
 \fB\-\-json\fP
 Print a JSON representation\. Currently the default value for \fIversion\fP is \fBv1\fP for \fIformula\fP\&\. For \fIformula\fP and \fIcask\fP use \fBv2\fP\&\. See the docs for examples of using the JSON output: 
 .UR https://docs\.brew\.sh/Querying\-Brew
@@ -935,7 +938,7 @@ Include only casks\.
 .SS "\fB\-\-cache\fP \fR[\fIoptions\fP] \fR[\fIformula\fP|\fIcask\fP \.\.\.]"
 Display Homebrew\[u2019]s download cache\. See also \fBHOMEBREW_CACHE\fP\&\.
 .P
-If \fIformula\fP is provided, display the file or directory used to cache \fIformula\fP\&\.
+If a \fIformula\fP or \fIcask\fP is provided, display the file or directory used to cache it\.
 .TP
 \fB\-\-os\fP
 Show cache file for the given operating system\. (Pass \fBall\fP to show cache files for all operating systems\.)
