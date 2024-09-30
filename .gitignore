@@ -165,6 +165,7 @@
 !/.dockerignore
 !/.editorconfig
 !/.gitignore
+!/.gitattributes
 !/.irb_config
 !/.ruby-version
 !/.shellcheckrc
