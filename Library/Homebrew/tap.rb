@@ -459,7 +459,7 @@ class Tap
         "\n#{contact}"
       end
 
-      error_message = +"The installation of the #{full_name} was requested but #{owner}\n"
+      error_message = "The installation of the #{full_name} was requested but #{owner}\n"
       error_message << "has not allowed this tap in `HOMEBREW_ALLOWED_TAPS`" unless allowed_by_env?
       error_message << " and\n" if !allowed_by_env? && forbidden_by_env?
       error_message << "has forbidden this tap in `HOMEBREW_FORBIDDEN_TAPS`" if forbidden_by_env?
@@ -902,6 +902,9 @@ class Tap
       hash["remote"] = remote
       hash["custom_remote"] = custom_remote?
       hash["private"] = private?
+      hash["HEAD"] = git_head || "(none)"
+      hash["last_commit"] = git_last_commit || "never"
+      hash["branch"] = git_branch || "(none)"
     end
 
     hash
