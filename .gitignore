@@ -162,7 +162,6 @@
 
 
 # Unignore our root-level metadata files.
-!/.dockerignore
 !/.editorconfig
 !/.gitignore
 !/.gitattributes
