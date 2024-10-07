@@ -171,6 +171,7 @@
 !/.yardopts
 !/LICENSE.txt
 !/README.md
+!/.github
 
 # Unignore tests' bundle config
 !/Library/Homebrew/test/.bundle/config
