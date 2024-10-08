@@ -174,6 +174,8 @@ simulate_from_current_branch() {
   INITIAL_REVISION="$(git rev-parse -q --verify "${UPSTREAM_BRANCH}")"
   export HOMEBREW_UPDATE_BEFORE"${TAP_VAR}"="${INITIAL_REVISION}"
   export HOMEBREW_UPDATE_AFTER"${TAP_VAR}"="${CURRENT_REVISION}"
+  echo init: "${INITIAL_REVISION}" 
+  echo current: "${CURRENT_REVISION}"
   if [[ "${INITIAL_REVISION}" != "${CURRENT_REVISION}" ]]
   then
     HOMEBREW_UPDATED="1"
