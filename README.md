@@ -23,23 +23,6 @@ mkdir [Homebrew Prefix]/bin
 ln -s [Homebrew Repository]/bin/brew [Homebrew Prefix]/bin/brew
 ```
 
-## A way to use packages outside current Homebrew
-
-We had discovered a way to do this, though we're still not sure if it's a stable way. If you found any problem, report is here: https://github.com/brewAyW/brew/issues/4 
-
-This would help a lot when you're having different brews around your system but don't want to build one same package again and again.
-
-```
-# First, the formula and version that match your outside package
-mkdir [Homebrew Repository]/Cellar/[matched formula name]
-ln -s Homebrew Repository]/Cellar/[matched formula name]/[matched version] [outside package's prefix]
-# Finished!
-```
-
-Notice that you should first check if the outside package is the same to the Homebrew package (for example, Homebrew node.js and website downloaded node.js is different).
-
-Suggestions: openssl is well needed and takes a long time to build. So try to link it!
-
 ## Developing Plans
 
 - Because Homebrew Cask cannot support multi-user just by the way it work. So we are working on taking Homebrew Cask out of brewAnywhere.
