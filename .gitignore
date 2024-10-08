@@ -163,7 +163,6 @@
 
 # Unignore our root-level metadata files.
 !/.editorconfig
-!/.gitignore
 !/.gitattributes
 !/.irb_config
 !/.ruby-version
