@@ -1,6 +1,6 @@
 # brewAnywhere
 
-This is not the offical Homebrew! OFFICAL:https://github.com/homebrew 
+This is not the offical Homebrew! OFFICAL:https://github.com/homebrew a
 
 We're having a idea that a package manager should be portable and multi-user welcome. If you hava this idea too, try this!
 
