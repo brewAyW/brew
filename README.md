@@ -42,7 +42,9 @@ Suggestions: openssl is well needed and takes a long time to build. So try to li
 
 ## Developing Plans
 
-Because Homebrew Cask cannot support multi-user just by the way it work. So we are working on taking Homebrew Cask out of brewAnywhere.
+- Because Homebrew Cask cannot support multi-user just by the way it work. So we are working on taking Homebrew Cask out of brewAnywhere.
+
+- We also want to remove all the anti multi-user thing in brewAnywhere.
 
 If you want to help, say in https://github.com/brewAyW/brew/issues/5.
 
