@@ -164,13 +164,10 @@
 # Unignore our root-level metadata files.
 !/.editorconfig
 !/.gitattributes
-!/.irb_config
-!/.ruby-version
 !/.shellcheckrc
-!/.yardopts
 !/LICENSE.txt
 !/README.md
-!/.github
+
 
 # Unignore tests' bundle config
 !/Library/Homebrew/test/.bundle/config
